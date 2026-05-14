@@ -1,0 +1,61 @@
+{
+  "data_path": "data/dataset_clean_4field.jsonl",
+  "summary": {
+    "total_samples": 1933,
+    "affected_samples": 0,
+    "total_issue_flags": 0,
+    "pass_rate": 1.0,
+    "checks": {
+      "json_parse_errors": 0,
+      "schema_missing_field": 0,
+      "gt_tool_not_found": 0,
+      "gt_missing_required_param": 0,
+      "bad_role_sequence": 0,
+      "duplicates": 0,
+      "gt_negative_reward": 0
+    },
+    "reward_stats": {
+      "mean": 4.0,
+      "min": 4.0,
+      "max": 4.0,
+      "below_zero": 0,
+      "below_three": 0
+    }
+  },
+  "issues": {
+    "json_parse_errors": [],
+    "schema_missing_field": [],
+    "gt_tool_not_found": [],
+    "gt_missing_required_param": [],
+    "bad_role_sequence": [],
+    "duplicates": [],
+    "gt_negative_reward": []
+  },
+  "distribution": {
+    "by_gt_call_count": {
+      "1": 862,
+      "3": 34,
+      "2": 246,
+      "0": 784,
+      "4": 7
+    },
+    "by_message_count": {
+      "6": 254,
+      "8": 75,
+      "14": 57,
+      "12": 153,
+      "16": 20,
+      "10": 93,
+      "2": 784,
+      "13": 7,
+      "11": 1,
+      "15": 4,
+      "17": 22,
+      "4": 461,
+      "7": 1,
+      "18": 1
+    },
+    "by_category": {},
+    "by_domain": {}
+  }
+}

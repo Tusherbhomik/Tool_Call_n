@@ -1,0 +1,4868 @@
+{
+  "data_path": "data/dataset_14_may.jsonl",
+  "summary": {
+    "total_samples": 2627,
+    "affected_samples": 738,
+    "total_issue_flags": 763,
+    "pass_rate": 0.7191,
+    "checks": {
+      "json_parse_errors": 0,
+      "schema_missing_field": 0,
+      "gt_tool_not_found": 458,
+      "gt_missing_required_param": 1,
+      "invalid_tool_in_gt": 0,
+      "bad_role_sequence": 64,
+      "duplicates": 240,
+      "gt_negative_reward": 0
+    },
+    "reward_stats": {
+      "mean": 4.0,
+      "min": 4.0,
+      "max": 4.0,
+      "below_zero": 0,
+      "below_three": 0
+    }
+  },
+  "issues": {
+    "json_parse_errors": [],
+    "schema_missing_field": [],
+    "gt_tool_not_found": [
+      {
+        "id": "five_plus_turn_0056",
+        "unknown_names": [
+          "write_review"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0071",
+        "unknown_names": [
+          "add_to_watchlist"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0072",
+        "unknown_names": [
+          "add_to_watchlist"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0073",
+        "unknown_names": [
+          "cast_to_device"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0078",
+        "unknown_names": [
+          "add_to_watchlist"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0079",
+        "unknown_names": [
+          "cast_to_device"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0084",
+        "unknown_names": [
+          "add_to_watchlist"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0085",
+        "unknown_names": [
+          "cast_to_device"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0123",
+        "unknown_names": [
+          "control_appliance"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0129",
+        "unknown_names": [
+          "control_appliance"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0135",
+        "unknown_names": [
+          "control_appliance"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0140",
+        "unknown_names": [
+          "book_car_rental"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0098_gr",
+        "unknown_names": [
+          "get_thread_replies",
+          "get_thread_replies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0099_gr",
+        "unknown_names": [
+          "pin_message",
+          "pin_message"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0100_gr",
+        "unknown_names": [
+          "add_member_to_channel",
+          "add_member_to_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0104_gr",
+        "unknown_names": [
+          "archive_channel",
+          "archive_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0107_gr",
+        "unknown_names": [
+          "get_thread_replies",
+          "get_thread_replies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0108_gr",
+        "unknown_names": [
+          "create_channel",
+          "create_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0109_gr",
+        "unknown_names": [
+          "add_member_to_channel",
+          "add_member_to_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0110_gr",
+        "unknown_names": [
+          "pin_message",
+          "pin_message"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0111_gr",
+        "unknown_names": [
+          "send_sms",
+          "send_sms"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0114_gr",
+        "unknown_names": [
+          "send_email",
+          "send_email"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0115_gr",
+        "unknown_names": [
+          "archive_channel",
+          "archive_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0118_gr",
+        "unknown_names": [
+          "get_thread_replies",
+          "get_thread_replies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0121_gr",
+        "unknown_names": [
+          "create_channel",
+          "add_member_to_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0124_gr",
+        "unknown_names": [
+          "create_channel",
+          "create_channel",
+          "create_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0125_gr",
+        "unknown_names": [
+          "add_member_to_channel",
+          "add_member_to_channel",
+          "add_member_to_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0126_gr",
+        "unknown_names": [
+          "archive_channel",
+          "archive_channel",
+          "archive_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0127_gr",
+        "unknown_names": [
+          "send_sms",
+          "send_sms",
+          "send_sms"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0130_gr",
+        "unknown_names": [
+          "get_thread_replies",
+          "get_thread_replies",
+          "get_thread_replies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0133_gr",
+        "unknown_names": [
+          "add_member_to_channel",
+          "add_member_to_channel",
+          "add_member_to_channel",
+          "add_member_to_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0134_gr",
+        "unknown_names": [
+          "archive_channel",
+          "archive_channel",
+          "archive_channel",
+          "archive_channel"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0136_gr",
+        "unknown_names": [
+          "track_shipment",
+          "track_shipment"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0137_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0138_gr",
+        "unknown_names": [
+          "get_product_details",
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0139_gr",
+        "unknown_names": [
+          "cancel_order",
+          "cancel_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0140_gr",
+        "unknown_names": [
+          "add_to_cart",
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0143_gr",
+        "unknown_names": [
+          "check_inventory",
+          "check_inventory"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0144_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0145_gr",
+        "unknown_names": [
+          "track_shipment",
+          "track_shipment"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0146_gr",
+        "unknown_names": [
+          "get_product_details",
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0147_gr",
+        "unknown_names": [
+          "apply_coupon",
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0149_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0150_gr",
+        "unknown_names": [
+          "check_inventory",
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0152_gr",
+        "unknown_names": [
+          "add_to_cart",
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0153_gr",
+        "unknown_names": [
+          "track_shipment",
+          "track_shipment"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0155_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0156_gr",
+        "unknown_names": [
+          "get_product_details",
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0157_gr",
+        "unknown_names": [
+          "cancel_order",
+          "cancel_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0158_gr",
+        "unknown_names": [
+          "apply_coupon",
+          "apply_coupon"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0159_gr",
+        "unknown_names": [
+          "check_inventory",
+          "check_inventory"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0160_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0163_gr",
+        "unknown_names": [
+          "add_to_cart",
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0165_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0167_gr",
+        "unknown_names": [
+          "track_shipment",
+          "track_shipment",
+          "track_shipment"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0168_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0169_gr",
+        "unknown_names": [
+          "get_product_details",
+          "get_product_details",
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0170_gr",
+        "unknown_names": [
+          "cancel_order",
+          "cancel_order",
+          "cancel_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0171_gr",
+        "unknown_names": [
+          "add_to_cart",
+          "add_to_cart",
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0173_gr",
+        "unknown_names": [
+          "check_inventory",
+          "check_inventory",
+          "check_inventory"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0175_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0176_gr",
+        "unknown_names": [
+          "track_shipment",
+          "track_shipment",
+          "track_shipment",
+          "track_shipment"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0177_gr",
+        "unknown_names": [
+          "search_products",
+          "search_products",
+          "search_products",
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0178_gr",
+        "unknown_names": [
+          "cancel_order",
+          "cancel_order",
+          "cancel_order",
+          "cancel_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0179_gr",
+        "unknown_names": [
+          "add_to_cart",
+          "add_to_cart",
+          "add_to_cart",
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0180_gr",
+        "unknown_names": [
+          "get_product_details",
+          "get_product_details",
+          "get_product_details",
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0181_gr",
+        "unknown_names": [
+          "get_showtimes",
+          "get_showtimes"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0183_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0184_gr",
+        "unknown_names": [
+          "search_movies",
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0185_gr",
+        "unknown_names": [
+          "get_recommendations",
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0186_gr",
+        "unknown_names": [
+          "add_to_playlist",
+          "add_to_playlist"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0187_gr",
+        "unknown_names": [
+          "search_music",
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0188_gr",
+        "unknown_names": [
+          "book_tickets",
+          "book_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0189_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0190_gr",
+        "unknown_names": [
+          "play_song",
+          "play_song"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0191_gr",
+        "unknown_names": [
+          "get_showtimes",
+          "get_showtimes"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0192_gr",
+        "unknown_names": [
+          "book_event_tickets",
+          "book_event_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0193_gr",
+        "unknown_names": [
+          "search_movies",
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0194_gr",
+        "unknown_names": [
+          "add_to_playlist",
+          "add_to_playlist"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0195_gr",
+        "unknown_names": [
+          "get_recommendations",
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0196_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0197_gr",
+        "unknown_names": [
+          "search_music",
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0198_gr",
+        "unknown_names": [
+          "play_song",
+          "play_song"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0199_gr",
+        "unknown_names": [
+          "get_showtimes",
+          "get_showtimes"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0201_gr",
+        "unknown_names": [
+          "search_movies",
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0202_gr",
+        "unknown_names": [
+          "create_playlist",
+          "create_playlist"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0203_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0204_gr",
+        "unknown_names": [
+          "book_tickets",
+          "book_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0205_gr",
+        "unknown_names": [
+          "add_to_playlist",
+          "add_to_playlist"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0206_gr",
+        "unknown_names": [
+          "search_music",
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0207_gr",
+        "unknown_names": [
+          "get_showtimes",
+          "get_showtimes"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0208_gr",
+        "unknown_names": [
+          "search_movies",
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0209_gr",
+        "unknown_names": [
+          "play_song",
+          "play_song"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0210_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0211_gr",
+        "unknown_names": [
+          "get_recommendations",
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0212_gr",
+        "unknown_names": [
+          "get_showtimes",
+          "get_showtimes",
+          "get_showtimes"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0214_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0215_gr",
+        "unknown_names": [
+          "get_recommendations",
+          "get_recommendations",
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0217_gr",
+        "unknown_names": [
+          "search_music",
+          "search_music",
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0218_gr",
+        "unknown_names": [
+          "book_tickets",
+          "book_tickets",
+          "book_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0219_gr",
+        "unknown_names": [
+          "search_movies",
+          "search_movies",
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0220_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0222_gr",
+        "unknown_names": [
+          "get_showtimes",
+          "get_showtimes",
+          "get_showtimes",
+          "get_showtimes"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0223_gr",
+        "unknown_names": [
+          "search_events",
+          "search_events",
+          "search_events",
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0224_gr",
+        "unknown_names": [
+          "get_recommendations",
+          "get_recommendations",
+          "get_recommendations",
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0225_gr",
+        "unknown_names": [
+          "search_music",
+          "search_music",
+          "search_music",
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0226_gr",
+        "unknown_names": [
+          "get_stock_price",
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0227_gr",
+        "unknown_names": [
+          "set_price_alert",
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0228_gr",
+        "unknown_names": [
+          "get_account_balance",
+          "get_account_balance"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0229_gr",
+        "unknown_names": [
+          "get_market_news",
+          "get_market_news"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0230_gr",
+        "unknown_names": [
+          "get_exchange_rate",
+          "get_exchange_rate"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0231_gr",
+        "unknown_names": [
+          "place_trade_order",
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0232_gr",
+        "unknown_names": [
+          "get_transaction_history",
+          "get_transaction_history"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0233_gr",
+        "unknown_names": [
+          "get_stock_price",
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0234_gr",
+        "unknown_names": [
+          "set_price_alert",
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0235_gr",
+        "unknown_names": [
+          "get_portfolio_summary",
+          "get_portfolio_summary"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0236_gr",
+        "unknown_names": [
+          "place_trade_order",
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0237_gr",
+        "unknown_names": [
+          "get_exchange_rate",
+          "get_exchange_rate"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0238_gr",
+        "unknown_names": [
+          "get_market_news",
+          "get_market_news"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0239_gr",
+        "unknown_names": [
+          "calculate_tax",
+          "calculate_tax"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0240_gr",
+        "unknown_names": [
+          "get_stock_price",
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0242_gr",
+        "unknown_names": [
+          "place_trade_order",
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0243_gr",
+        "unknown_names": [
+          "get_market_news",
+          "get_market_news"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0244_gr",
+        "unknown_names": [
+          "set_price_alert",
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0245_gr",
+        "unknown_names": [
+          "get_exchange_rate",
+          "get_exchange_rate"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0246_gr",
+        "unknown_names": [
+          "get_portfolio_summary",
+          "get_portfolio_summary"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0247_gr",
+        "unknown_names": [
+          "place_trade_order",
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0248_gr",
+        "unknown_names": [
+          "get_stock_price",
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0249_gr",
+        "unknown_names": [
+          "calculate_tax",
+          "calculate_tax"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0250_gr",
+        "unknown_names": [
+          "get_transaction_history",
+          "get_transaction_history"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0251_gr",
+        "unknown_names": [
+          "set_price_alert",
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0252_gr",
+        "unknown_names": [
+          "get_market_news",
+          "get_market_news"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0253_gr",
+        "unknown_names": [
+          "get_account_balance",
+          "get_account_balance"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0254_gr",
+        "unknown_names": [
+          "place_trade_order",
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0255_gr",
+        "unknown_names": [
+          "get_exchange_rate",
+          "get_exchange_rate"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0256_gr",
+        "unknown_names": [
+          "get_stock_price",
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0257_gr",
+        "unknown_names": [
+          "get_stock_price",
+          "get_stock_price",
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0258_gr",
+        "unknown_names": [
+          "set_price_alert",
+          "set_price_alert",
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0259_gr",
+        "unknown_names": [
+          "get_account_balance",
+          "get_account_balance",
+          "get_account_balance"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0260_gr",
+        "unknown_names": [
+          "place_trade_order",
+          "place_trade_order",
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0261_gr",
+        "unknown_names": [
+          "get_market_news",
+          "get_market_news",
+          "get_market_news"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0262_gr",
+        "unknown_names": [
+          "get_exchange_rate",
+          "get_exchange_rate",
+          "get_exchange_rate"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0263_gr",
+        "unknown_names": [
+          "calculate_tax",
+          "calculate_tax",
+          "calculate_tax"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0264_gr",
+        "unknown_names": [
+          "get_portfolio_summary",
+          "get_portfolio_summary",
+          "get_portfolio_summary"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0265_gr",
+        "unknown_names": [
+          "get_transaction_history",
+          "get_transaction_history",
+          "get_transaction_history"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0266_gr",
+        "unknown_names": [
+          "get_stock_price",
+          "get_stock_price",
+          "get_stock_price",
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0267_gr",
+        "unknown_names": [
+          "place_trade_order",
+          "place_trade_order",
+          "place_trade_order",
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0268_gr",
+        "unknown_names": [
+          "get_account_balance",
+          "get_account_balance",
+          "get_account_balance",
+          "get_account_balance"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0269_gr",
+        "unknown_names": [
+          "get_exchange_rate",
+          "get_exchange_rate",
+          "get_exchange_rate",
+          "get_exchange_rate"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0270_gr",
+        "unknown_names": [
+          "set_price_alert",
+          "set_price_alert",
+          "set_price_alert",
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0271_gr",
+        "unknown_names": [
+          "search_papers",
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0272_gr",
+        "unknown_names": [
+          "get_paper_details",
+          "get_paper_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0273_gr",
+        "unknown_names": [
+          "get_citation_count",
+          "get_citation_count"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0274_gr",
+        "unknown_names": [
+          "download_paper",
+          "download_paper"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0281_gr",
+        "unknown_names": [
+          "get_author_profile",
+          "get_author_profile"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0282_gr",
+        "unknown_names": [
+          "download_paper",
+          "download_paper"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0283_gr",
+        "unknown_names": [
+          "search_patents",
+          "search_patents"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0284_gr",
+        "unknown_names": [
+          "get_citation_count",
+          "get_citation_count"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0285_gr",
+        "unknown_names": [
+          "search_datasets",
+          "search_datasets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0286_gr",
+        "unknown_names": [
+          "search_web",
+          "search_web"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0287_gr",
+        "unknown_names": [
+          "search_papers",
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0288_gr",
+        "unknown_names": [
+          "summarize_document",
+          "summarize_document"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0289_gr",
+        "unknown_names": [
+          "get_author_profile",
+          "get_author_profile"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0290_gr",
+        "unknown_names": [
+          "search_patents",
+          "search_patents"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0292_gr",
+        "unknown_names": [
+          "search_papers",
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0293_gr",
+        "unknown_names": [
+          "get_paper_details",
+          "get_paper_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0294_gr",
+        "unknown_names": [
+          "search_datasets",
+          "search_datasets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0295_gr",
+        "unknown_names": [
+          "get_author_profile",
+          "get_author_profile"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0296_gr",
+        "unknown_names": [
+          "search_patents",
+          "search_patents"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0297_gr",
+        "unknown_names": [
+          "search_papers",
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0298_gr",
+        "unknown_names": [
+          "download_paper",
+          "download_paper"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0299_gr",
+        "unknown_names": [
+          "search_web",
+          "search_web"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0301_gr",
+        "unknown_names": [
+          "search_datasets",
+          "search_datasets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0302_gr",
+        "unknown_names": [
+          "search_papers",
+          "search_papers",
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0303_gr",
+        "unknown_names": [
+          "get_author_profile",
+          "get_author_profile",
+          "get_author_profile"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0304_gr",
+        "unknown_names": [
+          "get_citation_count",
+          "get_citation_count",
+          "get_citation_count"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0305_gr",
+        "unknown_names": [
+          "download_paper",
+          "download_paper",
+          "download_paper"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0306_gr",
+        "unknown_names": [
+          "search_patents",
+          "search_patents",
+          "search_patents"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0307_gr",
+        "unknown_names": [
+          "search_web",
+          "search_web",
+          "search_web"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0309_gr",
+        "unknown_names": [
+          "search_datasets",
+          "search_datasets",
+          "search_datasets"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0310_gr",
+        "unknown_names": [
+          "get_paper_details",
+          "get_paper_details",
+          "get_paper_details"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0311_gr",
+        "unknown_names": [
+          "search_papers",
+          "search_papers",
+          "search_papers",
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0312_gr",
+        "unknown_names": [
+          "get_author_profile",
+          "get_author_profile",
+          "get_author_profile",
+          "get_author_profile"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0313_gr",
+        "unknown_names": [
+          "get_citation_count",
+          "get_citation_count",
+          "get_citation_count",
+          "get_citation_count"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0314_gr",
+        "unknown_names": [
+          "search_patents",
+          "search_patents",
+          "search_patents",
+          "search_patents"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0315_gr",
+        "unknown_names": [
+          "download_paper",
+          "download_paper",
+          "download_paper",
+          "download_paper"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0316_gr",
+        "unknown_names": [
+          "turn_off_device",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0317_gr",
+        "unknown_names": [
+          "lock_door",
+          "lock_door"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0318_gr",
+        "unknown_names": [
+          "set_thermostat",
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0319_gr",
+        "unknown_names": [
+          "turn_on_device",
+          "turn_on_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0320_gr",
+        "unknown_names": [
+          "get_device_status",
+          "get_device_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0321_gr",
+        "unknown_names": [
+          "set_light_brightness",
+          "set_light_brightness"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0322_gr",
+        "unknown_names": [
+          "unlock_door",
+          "turn_on_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0323_gr",
+        "unknown_names": [
+          "schedule_device",
+          "schedule_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0324_gr",
+        "unknown_names": [
+          "get_energy_usage",
+          "get_energy_usage"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0325_gr",
+        "unknown_names": [
+          "turn_off_device",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0326_gr",
+        "unknown_names": [
+          "set_thermostat",
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0327_gr",
+        "unknown_names": [
+          "lock_door",
+          "arm_security_system"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0328_gr",
+        "unknown_names": [
+          "get_device_status",
+          "get_device_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0329_gr",
+        "unknown_names": [
+          "turn_on_device",
+          "turn_on_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0330_gr",
+        "unknown_names": [
+          "set_light_brightness",
+          "set_light_brightness"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0331_gr",
+        "unknown_names": [
+          "schedule_device",
+          "schedule_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0332_gr",
+        "unknown_names": [
+          "get_energy_usage",
+          "get_energy_usage"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0334_gr",
+        "unknown_names": [
+          "turn_off_device",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0335_gr",
+        "unknown_names": [
+          "set_thermostat",
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0336_gr",
+        "unknown_names": [
+          "lock_door",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0337_gr",
+        "unknown_names": [
+          "get_device_status",
+          "get_device_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0338_gr",
+        "unknown_names": [
+          "schedule_device",
+          "schedule_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0339_gr",
+        "unknown_names": [
+          "set_light_brightness",
+          "set_light_brightness"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0340_gr",
+        "unknown_names": [
+          "turn_on_device",
+          "turn_on_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0341_gr",
+        "unknown_names": [
+          "get_energy_usage",
+          "get_energy_usage"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0342_gr",
+        "unknown_names": [
+          "turn_off_device",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0343_gr",
+        "unknown_names": [
+          "arm_security_system",
+          "lock_door"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0344_gr",
+        "unknown_names": [
+          "unlock_door",
+          "unlock_door"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0345_gr",
+        "unknown_names": [
+          "set_thermostat",
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0346_gr",
+        "unknown_names": [
+          "turn_on_device",
+          "turn_on_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0347_gr",
+        "unknown_names": [
+          "turn_off_device",
+          "turn_off_device",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0348_gr",
+        "unknown_names": [
+          "set_thermostat",
+          "set_thermostat",
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0349_gr",
+        "unknown_names": [
+          "lock_door",
+          "lock_door",
+          "lock_door"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0350_gr",
+        "unknown_names": [
+          "turn_on_device",
+          "turn_on_device",
+          "turn_on_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0351_gr",
+        "unknown_names": [
+          "get_energy_usage",
+          "get_energy_usage",
+          "get_energy_usage"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0352_gr",
+        "unknown_names": [
+          "set_light_brightness",
+          "set_light_brightness",
+          "set_light_brightness"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0353_gr",
+        "unknown_names": [
+          "schedule_device",
+          "schedule_device",
+          "schedule_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0354_gr",
+        "unknown_names": [
+          "get_device_status",
+          "get_device_status",
+          "get_device_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0355_gr",
+        "unknown_names": [
+          "turn_off_device",
+          "turn_off_device",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0356_gr",
+        "unknown_names": [
+          "turn_off_device",
+          "turn_off_device",
+          "turn_off_device",
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0357_gr",
+        "unknown_names": [
+          "set_thermostat",
+          "set_thermostat",
+          "set_thermostat",
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0358_gr",
+        "unknown_names": [
+          "lock_door",
+          "lock_door",
+          "lock_door",
+          "lock_door"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0360_gr",
+        "unknown_names": [
+          "set_light_brightness",
+          "set_light_brightness",
+          "set_light_brightness",
+          "set_light_brightness"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0361_gr",
+        "unknown_names": [
+          "search_flights",
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0362_gr",
+        "unknown_names": [
+          "search_hotels",
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0363_gr",
+        "unknown_names": [
+          "get_visa_requirements",
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0364_gr",
+        "unknown_names": [
+          "get_flight_status",
+          "get_flight_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0365_gr",
+        "unknown_names": [
+          "cancel_flight",
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0366_gr",
+        "unknown_names": [
+          "search_car_rentals",
+          "search_car_rentals"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0367_gr",
+        "unknown_names": [
+          "search_flights",
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0368_gr",
+        "unknown_names": [
+          "check_in_online",
+          "check_in_online"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0369_gr",
+        "unknown_names": [
+          "get_visa_requirements",
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0370_gr",
+        "unknown_names": [
+          "search_hotels",
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0371_gr",
+        "unknown_names": [
+          "cancel_flight",
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0372_gr",
+        "unknown_names": [
+          "get_flight_status",
+          "get_flight_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0373_gr",
+        "unknown_names": [
+          "search_flights",
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0374_gr",
+        "unknown_names": [
+          "search_car_rentals",
+          "search_car_rentals"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0375_gr",
+        "unknown_names": [
+          "get_visa_requirements",
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0376_gr",
+        "unknown_names": [
+          "check_in_online",
+          "check_in_online"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0377_gr",
+        "unknown_names": [
+          "search_flights",
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0378_gr",
+        "unknown_names": [
+          "search_hotels",
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0379_gr",
+        "unknown_names": [
+          "cancel_flight",
+          "check_in_online"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0380_gr",
+        "unknown_names": [
+          "get_flight_status",
+          "get_flight_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0381_gr",
+        "unknown_names": [
+          "search_car_rentals",
+          "search_car_rentals"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0382_gr",
+        "unknown_names": [
+          "get_visa_requirements",
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0383_gr",
+        "unknown_names": [
+          "search_flights",
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0384_gr",
+        "unknown_names": [
+          "check_in_online",
+          "check_in_online"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0385_gr",
+        "unknown_names": [
+          "search_hotels",
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0386_gr",
+        "unknown_names": [
+          "cancel_flight",
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0387_gr",
+        "unknown_names": [
+          "get_flight_status",
+          "get_flight_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0389_gr",
+        "unknown_names": [
+          "search_car_rentals",
+          "search_car_rentals"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0390_gr",
+        "unknown_names": [
+          "get_visa_requirements",
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0391_gr",
+        "unknown_names": [
+          "check_in_online",
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0392_gr",
+        "unknown_names": [
+          "search_flights",
+          "search_flights",
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0393_gr",
+        "unknown_names": [
+          "search_hotels",
+          "search_hotels",
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0394_gr",
+        "unknown_names": [
+          "cancel_flight",
+          "cancel_flight",
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0395_gr",
+        "unknown_names": [
+          "get_flight_status",
+          "get_flight_status",
+          "get_flight_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0396_gr",
+        "unknown_names": [
+          "get_visa_requirements",
+          "get_visa_requirements",
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0397_gr",
+        "unknown_names": [
+          "check_in_online",
+          "check_in_online",
+          "check_in_online"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0398_gr",
+        "unknown_names": [
+          "search_car_rentals",
+          "search_car_rentals",
+          "search_car_rentals"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0399_gr",
+        "unknown_names": [
+          "search_flights",
+          "search_flights",
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0400_gr",
+        "unknown_names": [
+          "search_hotels",
+          "search_hotels",
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0402_gr",
+        "unknown_names": [
+          "cancel_flight",
+          "cancel_flight",
+          "cancel_flight",
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0403_gr",
+        "unknown_names": [
+          "get_flight_status",
+          "get_flight_status",
+          "get_flight_status",
+          "get_flight_status"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0404_gr",
+        "unknown_names": [
+          "search_hotels",
+          "search_hotels",
+          "search_hotels",
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_parallel_0405_gr",
+        "unknown_names": [
+          "get_visa_requirements",
+          "get_visa_requirements",
+          "get_visa_requirements",
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0001",
+        "unknown_names": [
+          "schedule_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0002",
+        "unknown_names": [
+          "cancel_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0003",
+        "unknown_names": [
+          "reschedule_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0004",
+        "unknown_names": [
+          "list_events"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0005",
+        "unknown_names": [
+          "check_user_availability"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0006",
+        "unknown_names": [
+          "find_available_slot"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0007",
+        "unknown_names": [
+          "get_event_details"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0008",
+        "unknown_names": [
+          "add_attendee"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0009",
+        "unknown_names": [
+          "set_reminder"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0010",
+        "unknown_names": [
+          "book_conference_room"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0011",
+        "unknown_names": [
+          "schedule_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0012",
+        "unknown_names": [
+          "cancel_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0013",
+        "unknown_names": [
+          "reschedule_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0014",
+        "unknown_names": [
+          "list_events"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0015",
+        "unknown_names": [
+          "check_user_availability"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0016",
+        "unknown_names": [
+          "find_available_slot"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0017",
+        "unknown_names": [
+          "get_event_details"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0018",
+        "unknown_names": [
+          "add_attendee"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0019",
+        "unknown_names": [
+          "set_reminder"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0020",
+        "unknown_names": [
+          "book_conference_room"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0021",
+        "unknown_names": [
+          "schedule_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0022",
+        "unknown_names": [
+          "cancel_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0023",
+        "unknown_names": [
+          "reschedule_meeting"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0024",
+        "unknown_names": [
+          "deploy_service"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0025",
+        "unknown_names": [
+          "rollback_deployment"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0026",
+        "unknown_names": [
+          "git_commit"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0027",
+        "unknown_names": [
+          "git_push"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0028",
+        "unknown_names": [
+          "create_branch"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0029",
+        "unknown_names": [
+          "merge_pull_request"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0030",
+        "unknown_names": [
+          "trigger_ci_pipeline"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0031",
+        "unknown_names": [
+          "run_tests"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0032",
+        "unknown_names": [
+          "lint_code"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0033",
+        "unknown_names": [
+          "check_build_status"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0034",
+        "unknown_names": [
+          "deploy_service"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0036",
+        "unknown_names": [
+          "git_commit"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0037",
+        "unknown_names": [
+          "git_push"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0038",
+        "unknown_names": [
+          "create_branch"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0039",
+        "unknown_names": [
+          "merge_pull_request"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0040",
+        "unknown_names": [
+          "trigger_ci_pipeline"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0041",
+        "unknown_names": [
+          "run_tests"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0042",
+        "unknown_names": [
+          "lint_code"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0043",
+        "unknown_names": [
+          "check_build_status"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0044",
+        "unknown_names": [
+          "deploy_service"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0045",
+        "unknown_names": [
+          "git_commit"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0046",
+        "unknown_names": [
+          "run_tests"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0047",
+        "unknown_names": [
+          "send_email"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0048",
+        "unknown_names": [
+          "send_slack_message"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0049",
+        "unknown_names": [
+          "create_channel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0050",
+        "unknown_names": [
+          "archive_channel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0051",
+        "unknown_names": [
+          "add_member_to_channel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0052",
+        "unknown_names": [
+          "send_sms"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0053",
+        "unknown_names": [
+          "schedule_message"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0054",
+        "unknown_names": [
+          "get_thread_replies"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0055",
+        "unknown_names": [
+          "pin_message"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0056",
+        "unknown_names": [
+          "set_status"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0057",
+        "unknown_names": [
+          "send_email"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0058",
+        "unknown_names": [
+          "send_slack_message"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0059",
+        "unknown_names": [
+          "create_channel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0060",
+        "unknown_names": [
+          "archive_channel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0061",
+        "unknown_names": [
+          "add_member_to_channel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0062",
+        "unknown_names": [
+          "send_sms"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0064",
+        "unknown_names": [
+          "get_thread_replies"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0065",
+        "unknown_names": [
+          "pin_message"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0066",
+        "unknown_names": [
+          "set_status"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0068",
+        "unknown_names": [
+          "send_slack_message"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0069",
+        "unknown_names": [
+          "send_sms"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0070",
+        "unknown_names": [
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0071",
+        "unknown_names": [
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0072",
+        "unknown_names": [
+          "place_order"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0073",
+        "unknown_names": [
+          "track_shipment"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0074",
+        "unknown_names": [
+          "cancel_order"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0075",
+        "unknown_names": [
+          "apply_coupon"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0076",
+        "unknown_names": [
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0077",
+        "unknown_names": [
+          "write_review"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0078",
+        "unknown_names": [
+          "process_return"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0079",
+        "unknown_names": [
+          "check_inventory"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0080",
+        "unknown_names": [
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0081",
+        "unknown_names": [
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0083",
+        "unknown_names": [
+          "track_shipment"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0084",
+        "unknown_names": [
+          "cancel_order"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0085",
+        "unknown_names": [
+          "apply_coupon"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0086",
+        "unknown_names": [
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0087",
+        "unknown_names": [
+          "write_review"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0088",
+        "unknown_names": [
+          "process_return"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0089",
+        "unknown_names": [
+          "check_inventory"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0090",
+        "unknown_names": [
+          "search_products"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0091",
+        "unknown_names": [
+          "add_to_cart"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0092",
+        "unknown_names": [
+          "get_product_details"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0093",
+        "unknown_names": [
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0094",
+        "unknown_names": [
+          "get_showtimes"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0095",
+        "unknown_names": [
+          "book_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0096",
+        "unknown_names": [
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0097",
+        "unknown_names": [
+          "play_song"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0099",
+        "unknown_names": [
+          "add_to_playlist"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0100",
+        "unknown_names": [
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0101",
+        "unknown_names": [
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0102",
+        "unknown_names": [
+          "book_event_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0103",
+        "unknown_names": [
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0105",
+        "unknown_names": [
+          "book_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0106",
+        "unknown_names": [
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0107",
+        "unknown_names": [
+          "play_song"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0108",
+        "unknown_names": [
+          "create_playlist"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0109",
+        "unknown_names": [
+          "add_to_playlist"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0110",
+        "unknown_names": [
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0111",
+        "unknown_names": [
+          "search_events"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0112",
+        "unknown_names": [
+          "book_event_tickets"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0113",
+        "unknown_names": [
+          "search_movies"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0114",
+        "unknown_names": [
+          "search_music"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0115",
+        "unknown_names": [
+          "get_recommendations"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0117",
+        "unknown_names": [
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0118",
+        "unknown_names": [
+          "get_portfolio_summary"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0119",
+        "unknown_names": [
+          "transfer_funds"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0120",
+        "unknown_names": [
+          "get_account_balance"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0121",
+        "unknown_names": [
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0122",
+        "unknown_names": [
+          "get_transaction_history"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0123",
+        "unknown_names": [
+          "calculate_tax"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0126",
+        "unknown_names": [
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0127",
+        "unknown_names": [
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0128",
+        "unknown_names": [
+          "get_portfolio_summary"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0129",
+        "unknown_names": [
+          "transfer_funds"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0131",
+        "unknown_names": [
+          "set_price_alert"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0132",
+        "unknown_names": [
+          "get_transaction_history"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0133",
+        "unknown_names": [
+          "calculate_tax"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0136",
+        "unknown_names": [
+          "get_stock_price"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0137",
+        "unknown_names": [
+          "place_trade_order"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0138",
+        "unknown_names": [
+          "get_portfolio_summary"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0139",
+        "unknown_names": [
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0141",
+        "unknown_names": [
+          "download_paper"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0142",
+        "unknown_names": [
+          "search_web"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0143",
+        "unknown_names": [
+          "summarize_document"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0144",
+        "unknown_names": [
+          "translate_text"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0145",
+        "unknown_names": [
+          "search_patents"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0146",
+        "unknown_names": [
+          "get_citation_count"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0147",
+        "unknown_names": [
+          "search_datasets"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0148",
+        "unknown_names": [
+          "get_author_profile"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0149",
+        "unknown_names": [
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0151",
+        "unknown_names": [
+          "download_paper"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0152",
+        "unknown_names": [
+          "search_web"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0153",
+        "unknown_names": [
+          "summarize_document"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0154",
+        "unknown_names": [
+          "translate_text"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0155",
+        "unknown_names": [
+          "search_patents"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0156",
+        "unknown_names": [
+          "get_citation_count"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0157",
+        "unknown_names": [
+          "search_datasets"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0158",
+        "unknown_names": [
+          "get_author_profile"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0159",
+        "unknown_names": [
+          "search_papers"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0160",
+        "unknown_names": [
+          "search_web"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0161",
+        "unknown_names": [
+          "translate_text"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0162",
+        "unknown_names": [
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0163",
+        "unknown_names": [
+          "turn_on_device"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0164",
+        "unknown_names": [
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0165",
+        "unknown_names": [
+          "get_device_status"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0166",
+        "unknown_names": [
+          "lock_door"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0167",
+        "unknown_names": [
+          "unlock_door"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0168",
+        "unknown_names": [
+          "arm_security_system"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0169",
+        "unknown_names": [
+          "set_light_brightness"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0170",
+        "unknown_names": [
+          "schedule_device"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0171",
+        "unknown_names": [
+          "get_energy_usage"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0172",
+        "unknown_names": [
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0174",
+        "unknown_names": [
+          "turn_off_device"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0175",
+        "unknown_names": [
+          "get_device_status"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0176",
+        "unknown_names": [
+          "lock_door"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0177",
+        "unknown_names": [
+          "unlock_door"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0178",
+        "unknown_names": [
+          "arm_security_system"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0179",
+        "unknown_names": [
+          "set_light_brightness"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0180",
+        "unknown_names": [
+          "schedule_device"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0181",
+        "unknown_names": [
+          "get_energy_usage"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0182",
+        "unknown_names": [
+          "set_thermostat"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0185",
+        "unknown_names": [
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0186",
+        "unknown_names": [
+          "book_flight"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0187",
+        "unknown_names": [
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0188",
+        "unknown_names": [
+          "search_hotels"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0189",
+        "unknown_names": [
+          "book_hotel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0190",
+        "unknown_names": [
+          "check_in_online"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0192",
+        "unknown_names": [
+          "search_car_rentals"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0193",
+        "unknown_names": [
+          "book_car_rental"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0195",
+        "unknown_names": [
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0196",
+        "unknown_names": [
+          "book_flight"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0197",
+        "unknown_names": [
+          "cancel_flight"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0199",
+        "unknown_names": [
+          "book_hotel"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0200",
+        "unknown_names": [
+          "check_in_online"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0201",
+        "unknown_names": [
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0203",
+        "unknown_names": [
+          "book_car_rental"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0205",
+        "unknown_names": [
+          "search_flights"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0206",
+        "unknown_names": [
+          "book_flight"
+        ]
+      },
+      {
+        "id": "single_turn_single_call_0207",
+        "unknown_names": [
+          "get_visa_requirements"
+        ]
+      },
+      {
+        "id": "three_turn_0107",
+        "unknown_names": [
+          "export_citations"
+        ]
+      }
+    ],
+    "gt_missing_required_param": [
+      {
+        "id": "three_turn_0107",
+        "missing_params": [
+          "tag_paper.identifier"
+        ]
+      }
+    ],
+    "invalid_tool_in_gt": [],
+    "bad_role_sequence": [
+      {
+        "id": "five_plus_turn_0005",
+        "issues": [
+          "consecutive assistant turns at index 7",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0018",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0020",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0022",
+        "issues": [
+          "consecutive assistant turns at index 3",
+          "consecutive assistant turns at index 6",
+          "consecutive assistant turns at index 7"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0055",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0056",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0057",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0069",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0070",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0071",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0072",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0073",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0074",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0075",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0076",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0078",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0079",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0080",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0081",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0082",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0084",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0085",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0086",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0087",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0088",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0089",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0090",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0091",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0092",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0093",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0095",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0097",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0098",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0099",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0101",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0103",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0104",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0105",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0106",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0107",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0108",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0111",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0112",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0117",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0118",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0120",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0121",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0122",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0123",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0124",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0125",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0126",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0127",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0129",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0131",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0132",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0133",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0135",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0137",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0138",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0139",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0140",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0141",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      },
+      {
+        "id": "five_plus_turn_0142",
+        "issues": [
+          "consecutive assistant turns at index 5",
+          "consecutive user turns at index 11"
+        ]
+      }
+    ],
+    "duplicates": [
+      {
+        "id": "five_plus_turn_0079",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0073"
+      },
+      {
+        "id": "five_plus_turn_0080",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0074"
+      },
+      {
+        "id": "five_plus_turn_0085",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0073"
+      },
+      {
+        "id": "five_plus_turn_0092",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0086"
+      },
+      {
+        "id": "five_plus_turn_0098",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0086"
+      },
+      {
+        "id": "five_plus_turn_0126",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0120"
+      },
+      {
+        "id": "five_plus_turn_0127",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0121"
+      },
+      {
+        "id": "five_plus_turn_0129",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0123"
+      },
+      {
+        "id": "five_plus_turn_0131",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0125"
+      },
+      {
+        "id": "five_plus_turn_0132",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0120"
+      },
+      {
+        "id": "five_plus_turn_0133",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0121"
+      },
+      {
+        "id": "five_plus_turn_0135",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0123"
+      },
+      {
+        "id": "five_plus_turn_0165",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0159"
+      },
+      {
+        "id": "five_plus_turn_0168",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0155"
+      },
+      {
+        "id": "five_plus_turn_0171",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0167"
+      },
+      {
+        "id": "five_plus_turn_0172",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0157"
+      },
+      {
+        "id": "five_plus_turn_0173",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0159"
+      },
+      {
+        "id": "five_plus_turn_0175",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0167"
+      },
+      {
+        "id": "five_plus_turn_0187",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0181"
+      },
+      {
+        "id": "five_plus_turn_0188",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0181"
+      },
+      {
+        "id": "five_plus_turn_0191",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0179"
+      },
+      {
+        "id": "five_plus_turn_0193",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0179"
+      },
+      {
+        "id": "five_plus_turn_0195",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0179"
+      },
+      {
+        "id": "five_plus_turn_0197",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0184"
+      },
+      {
+        "id": "five_plus_turn_0205",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0200"
+      },
+      {
+        "id": "five_plus_turn_0206",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0203"
+      },
+      {
+        "id": "five_plus_turn_0207",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0200"
+      },
+      {
+        "id": "five_plus_turn_0209",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0204"
+      },
+      {
+        "id": "five_plus_turn_0212",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0200"
+      },
+      {
+        "id": "five_plus_turn_0213",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0203"
+      },
+      {
+        "id": "five_plus_turn_0217",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0203"
+      },
+      {
+        "id": "five_plus_turn_0218",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0202"
+      },
+      {
+        "id": "five_plus_turn_0221",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0220"
+      },
+      {
+        "id": "five_plus_turn_0226",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0222"
+      },
+      {
+        "id": "five_plus_turn_0228",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0222"
+      },
+      {
+        "id": "five_plus_turn_0229",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0222"
+      },
+      {
+        "id": "five_plus_turn_0230",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0224"
+      },
+      {
+        "id": "five_plus_turn_0233",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0231"
+      },
+      {
+        "id": "five_plus_turn_0239",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0231"
+      },
+      {
+        "id": "five_plus_turn_0250",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0242"
+      },
+      {
+        "id": "five_plus_turn_0256",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0244"
+      },
+      {
+        "id": "five_plus_turn_0260",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0242"
+      },
+      {
+        "id": "five_plus_turn_0261",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0242"
+      },
+      {
+        "id": "five_plus_turn_0270",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0220"
+      },
+      {
+        "id": "five_plus_turn_0272",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "five_plus_turn_0273",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0268"
+      },
+      {
+        "id": "five_plus_turn_0275",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "five_plus_turn_0276",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0271"
+      },
+      {
+        "id": "five_plus_turn_0277",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "five_plus_turn_0282",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0267"
+      },
+      {
+        "id": "five_plus_turn_0290",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0287"
+      },
+      {
+        "id": "five_plus_turn_0296",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0291"
+      },
+      {
+        "id": "five_plus_turn_0297",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0294"
+      },
+      {
+        "id": "five_plus_turn_0302",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0287"
+      },
+      {
+        "id": "five_plus_turn_0304",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0287"
+      },
+      {
+        "id": "five_plus_turn_0315",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0308"
+      },
+      {
+        "id": "five_plus_turn_0316",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0311"
+      },
+      {
+        "id": "five_plus_turn_0319",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0308"
+      },
+      {
+        "id": "five_plus_turn_0321",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0309"
+      },
+      {
+        "id": "five_plus_turn_0324",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0309"
+      },
+      {
+        "id": "five_plus_turn_0325",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0318"
+      },
+      {
+        "id": "five_plus_turn_0327",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0314"
+      },
+      {
+        "id": "five_plus_turn_0335",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0334"
+      },
+      {
+        "id": "five_plus_turn_0338",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0331"
+      },
+      {
+        "id": "five_plus_turn_0339",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0336"
+      },
+      {
+        "id": "five_plus_turn_0342",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0334"
+      },
+      {
+        "id": "five_plus_turn_0343",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0333"
+      },
+      {
+        "id": "five_plus_turn_0344",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0332"
+      },
+      {
+        "id": "five_plus_turn_0345",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0331"
+      },
+      {
+        "id": "five_plus_turn_0346",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0337"
+      },
+      {
+        "id": "five_plus_turn_0348",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0333"
+      },
+      {
+        "id": "five_plus_turn_0349",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0332"
+      },
+      {
+        "id": "five_plus_turn_0350",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0333"
+      },
+      {
+        "id": "five_plus_turn_0351",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0331"
+      },
+      {
+        "id": "four_plus_turn_0002",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0158"
+      },
+      {
+        "id": "four_plus_turn_0004",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0001"
+      },
+      {
+        "id": "four_plus_turn_0005",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0167"
+      },
+      {
+        "id": "four_plus_turn_0007",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0155"
+      },
+      {
+        "id": "four_plus_turn_0008",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0001"
+      },
+      {
+        "id": "four_plus_turn_0009",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0159"
+      },
+      {
+        "id": "four_plus_turn_0010",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0160"
+      },
+      {
+        "id": "four_plus_turn_0011",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0155"
+      },
+      {
+        "id": "four_plus_turn_0014",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0167"
+      },
+      {
+        "id": "four_plus_turn_0018",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0181"
+      },
+      {
+        "id": "four_plus_turn_0020",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0184"
+      },
+      {
+        "id": "four_plus_turn_0021",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0182"
+      },
+      {
+        "id": "four_plus_turn_0022",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0190"
+      },
+      {
+        "id": "four_plus_turn_0024",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0184"
+      },
+      {
+        "id": "four_plus_turn_0025",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0185"
+      },
+      {
+        "id": "four_plus_turn_0026",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0192"
+      },
+      {
+        "id": "four_plus_turn_0027",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0182"
+      },
+      {
+        "id": "four_plus_turn_0030",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0219"
+      },
+      {
+        "id": "four_plus_turn_0032",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0202"
+      },
+      {
+        "id": "four_plus_turn_0034",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0204"
+      },
+      {
+        "id": "four_plus_turn_0038",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0215"
+      },
+      {
+        "id": "four_plus_turn_0039",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0035"
+      },
+      {
+        "id": "four_plus_turn_0045",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0035"
+      },
+      {
+        "id": "four_plus_turn_0046",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0204"
+      },
+      {
+        "id": "four_plus_turn_0047",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0231"
+      },
+      {
+        "id": "four_plus_turn_0050",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0231"
+      },
+      {
+        "id": "four_plus_turn_0051",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0049"
+      },
+      {
+        "id": "four_plus_turn_0052",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0048"
+      },
+      {
+        "id": "four_plus_turn_0053",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0224"
+      },
+      {
+        "id": "four_plus_turn_0054",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0241"
+      },
+      {
+        "id": "four_plus_turn_0055",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0220"
+      },
+      {
+        "id": "four_plus_turn_0057",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0231"
+      },
+      {
+        "id": "four_plus_turn_0062",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0251"
+      },
+      {
+        "id": "four_plus_turn_0063",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0246"
+      },
+      {
+        "id": "four_plus_turn_0064",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0244"
+      },
+      {
+        "id": "four_plus_turn_0068",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0251"
+      },
+      {
+        "id": "four_plus_turn_0072",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0251"
+      },
+      {
+        "id": "four_plus_turn_0073",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0071"
+      },
+      {
+        "id": "four_plus_turn_0075",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "four_plus_turn_0076",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "four_plus_turn_0078",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0271"
+      },
+      {
+        "id": "four_plus_turn_0080",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "four_plus_turn_0081",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0271"
+      },
+      {
+        "id": "four_plus_turn_0083",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "four_plus_turn_0085",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0271"
+      },
+      {
+        "id": "four_plus_turn_0087",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0264"
+      },
+      {
+        "id": "four_plus_turn_0088",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0271"
+      },
+      {
+        "id": "four_plus_turn_0092",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0293"
+      },
+      {
+        "id": "four_plus_turn_0093",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0089"
+      },
+      {
+        "id": "four_plus_turn_0095",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0089"
+      },
+      {
+        "id": "four_plus_turn_0098",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0293"
+      },
+      {
+        "id": "four_plus_turn_0103",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0320"
+      },
+      {
+        "id": "four_plus_turn_0105",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0314"
+      },
+      {
+        "id": "four_plus_turn_0109",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0314"
+      },
+      {
+        "id": "four_plus_turn_0110",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0322"
+      },
+      {
+        "id": "four_plus_turn_0111",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0106"
+      },
+      {
+        "id": "four_plus_turn_0112",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0106"
+      },
+      {
+        "id": "four_plus_turn_0113",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0106"
+      },
+      {
+        "id": "four_plus_turn_0114",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0309"
+      },
+      {
+        "id": "four_plus_turn_0115",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0314"
+      },
+      {
+        "id": "four_plus_turn_0118",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0117"
+      },
+      {
+        "id": "four_plus_turn_0121",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0119"
+      },
+      {
+        "id": "four_plus_turn_0123",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0333"
+      },
+      {
+        "id": "four_plus_turn_0125",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0117"
+      },
+      {
+        "id": "four_plus_turn_0127",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0333"
+      },
+      {
+        "id": "four_plus_turn_0129",
+        "type": "duplicate_content",
+        "matches_id": "four_plus_turn_0119"
+      },
+      {
+        "id": "4turn_3222",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0003"
+      },
+      {
+        "id": "four_plus_turn_0077",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0266"
+      },
+      {
+        "id": "four_plus_turn_0084",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0220"
+      },
+      {
+        "id": "single_turn_parallel_0019_gr",
+        "type": "duplicate_content",
+        "matches_id": "single_turn_parallel_0001_gr"
+      },
+      {
+        "id": "single_turn_parallel_0023_gr",
+        "type": "duplicate_content",
+        "matches_id": "single_turn_parallel_0009_gr"
+      },
+      {
+        "id": "single_turn_parallel_0031_gr",
+        "type": "duplicate_content",
+        "matches_id": "single_turn_parallel_0009_gr"
+      },
+      {
+        "id": "single_turn_parallel_0032_gr",
+        "type": "duplicate_content",
+        "matches_id": "single_turn_parallel_0001_gr"
+      },
+      {
+        "id": "six_plus_turn_0002",
+        "type": "duplicate_content",
+        "matches_id": "4turn_3221"
+      },
+      {
+        "id": "six_plus_turn_0004",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0004"
+      },
+      {
+        "id": "six_plus_turn_0015",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0018"
+      },
+      {
+        "id": "six_plus_turn_0045",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0043"
+      },
+      {
+        "id": "six_plus_turn_0046",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0055"
+      },
+      {
+        "id": "six_plus_turn_0047",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0043"
+      },
+      {
+        "id": "six_plus_turn_0048",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0057"
+      },
+      {
+        "id": "six_plus_turn_0055",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0043"
+      },
+      {
+        "id": "six_plus_turn_0062",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0074"
+      },
+      {
+        "id": "six_plus_turn_0063",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0075"
+      },
+      {
+        "id": "six_plus_turn_0064",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0076"
+      },
+      {
+        "id": "six_plus_turn_0068",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0074"
+      },
+      {
+        "id": "six_plus_turn_0069",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0081"
+      },
+      {
+        "id": "six_plus_turn_0070",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0082"
+      },
+      {
+        "id": "six_plus_turn_0071",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0086"
+      },
+      {
+        "id": "six_plus_turn_0072",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0087"
+      },
+      {
+        "id": "six_plus_turn_0073",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0088"
+      },
+      {
+        "id": "six_plus_turn_0081",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0090"
+      },
+      {
+        "id": "six_plus_turn_0102",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0123"
+      },
+      {
+        "id": "six_plus_turn_0103",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0124"
+      },
+      {
+        "id": "six_plus_turn_0101",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0122"
+      },
+      {
+        "id": "six_plus_turn_0124",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0142"
+      },
+      {
+        "id": "six_plus_turn_0126",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0138"
+      },
+      {
+        "id": "six_plus_turn_0215",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0214"
+      },
+      {
+        "id": "six_plus_turn_0184_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0195_gr"
+      },
+      {
+        "id": "six_plus_turn_0171_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0178_gr"
+      },
+      {
+        "id": "six_plus_turn_0177_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0175_gr"
+      },
+      {
+        "id": "six_plus_turn_0167_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0165_gr"
+      },
+      {
+        "id": "six_plus_turn_0168_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0166_gr"
+      },
+      {
+        "id": "six_plus_turn_0169_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0182_gr"
+      },
+      {
+        "id": "six_plus_turn_0159_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0165_gr"
+      },
+      {
+        "id": "six_plus_turn_0161_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0160_gr"
+      },
+      {
+        "id": "six_plus_turn_0163_gr",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0165_gr"
+      },
+      {
+        "id": "three_turn_0063",
+        "type": "duplicate_content",
+        "matches_id": "three_turn_0043"
+      },
+      {
+        "id": "three_turn_0171",
+        "type": "duplicate_content",
+        "matches_id": "three_turn_0167"
+      },
+      {
+        "id": "3turn_3024",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0018"
+      },
+      {
+        "id": "3turn_3026",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0020"
+      },
+      {
+        "id": "3turn_3027",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0021"
+      },
+      {
+        "id": "3turn_3028",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0019"
+      },
+      {
+        "id": "3turn_3029",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0020"
+      },
+      {
+        "id": "3turn_3047",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0029"
+      },
+      {
+        "id": "3turn_3048",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0030"
+      },
+      {
+        "id": "3turn_3049",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0031"
+      },
+      {
+        "id": "3turn_3051",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0033"
+      },
+      {
+        "id": "3turn_3052",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0034"
+      },
+      {
+        "id": "3turn_3070",
+        "type": "duplicate_content",
+        "matches_id": "six_plus_turn_0043"
+      },
+      {
+        "id": "3turn_3073",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0055"
+      },
+      {
+        "id": "3turn_3074",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0056"
+      },
+      {
+        "id": "3turn_3075",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0057"
+      },
+      {
+        "id": "3turn_3093",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0069"
+      },
+      {
+        "id": "3turn_3094",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0070"
+      },
+      {
+        "id": "3turn_3095",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0071"
+      },
+      {
+        "id": "3turn_3096",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0072"
+      },
+      {
+        "id": "3turn_3097",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0073"
+      },
+      {
+        "id": "3turn_3098",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0074"
+      },
+      {
+        "id": "3turn_3099",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0075"
+      },
+      {
+        "id": "3turn_3100",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0076"
+      },
+      {
+        "id": "3turn_3102",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0078"
+      },
+      {
+        "id": "3turn_3103",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0073"
+      },
+      {
+        "id": "3turn_3104",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0074"
+      },
+      {
+        "id": "3turn_3105",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0081"
+      },
+      {
+        "id": "3turn_3106",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0082"
+      },
+      {
+        "id": "3turn_3109",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0073"
+      },
+      {
+        "id": "3turn_3110",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0074"
+      },
+      {
+        "id": "3turn_3115",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0073"
+      },
+      {
+        "id": "3turn_3116",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0086"
+      },
+      {
+        "id": "3turn_3117",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0087"
+      },
+      {
+        "id": "3turn_3118",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0088"
+      },
+      {
+        "id": "3turn_3119",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0089"
+      },
+      {
+        "id": "3turn_3120",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0090"
+      },
+      {
+        "id": "3turn_3121",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0091"
+      },
+      {
+        "id": "3turn_3122",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0086"
+      },
+      {
+        "id": "3turn_3123",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0093"
+      },
+      {
+        "id": "3turn_3125",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0095"
+      },
+      {
+        "id": "3turn_3127",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0097"
+      },
+      {
+        "id": "3turn_3128",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0086"
+      },
+      {
+        "id": "3turn_3129",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0099"
+      },
+      {
+        "id": "3turn_3131",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0101"
+      },
+      {
+        "id": "3turn_3134",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0086"
+      },
+      {
+        "id": "3turn_3139",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0103"
+      },
+      {
+        "id": "3turn_3140",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0104"
+      },
+      {
+        "id": "3turn_3141",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0105"
+      },
+      {
+        "id": "3turn_3142",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0106"
+      },
+      {
+        "id": "3turn_3144",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0108"
+      },
+      {
+        "id": "3turn_3153",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0117"
+      },
+      {
+        "id": "3turn_3154",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0118"
+      },
+      {
+        "id": "3turn_3162",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0120"
+      },
+      {
+        "id": "3turn_3163",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0121"
+      },
+      {
+        "id": "3turn_3186",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0138"
+      },
+      {
+        "id": "3turn_3187",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0139"
+      },
+      {
+        "id": "3turn_3189",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0141"
+      },
+      {
+        "id": "3turn_3190",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0142"
+      },
+      {
+        "id": "3turn_3191",
+        "type": "duplicate_content",
+        "matches_id": "five_plus_turn_0137"
+      }
+    ],
+    "gt_negative_reward": []
+  },
+  "distribution": {
+    "by_category": {
+      "five_plus_turn": 233,
+      "four_plus_turn": 111,
+      "missing_tool_coverage": 784,
+      "six_plus_turn": 249,
+      "multi_turn_orchestration": 260,
+      "single_turn_single_call": 185,
+      "two_user_turn": 387,
+      "user_correction": 70,
+      "three_plus_turn": 348
+    },
+    "by_domain": {
+      "calendar_scheduling": 293,
+      "code_development": 316,
+      "communication": 259,
+      "ecommerce_shopping": 240,
+      "entertainment": 327,
+      "finance_trading": 294,
+      "research_search": 314,
+      "smart_home_iot": 300,
+      "travel_booking": 284
+    },
+    "by_gt_call_count": {
+      "1": 1264,
+      "3": 88,
+      "2": 455,
+      "0": 784,
+      "4": 36
+    },
+    "by_message_count": {
+      "6": 290,
+      "12": 363,
+      "9": 1,
+      "8": 81,
+      "14": 221,
+      "16": 38,
+      "10": 127,
+      "2": 969,
+      "13": 10,
+      "11": 6,
+      "15": 29,
+      "17": 25,
+      "19": 2,
+      "18": 2,
+      "4": 462,
+      "7": 1
+    },
+    "requires_prior_context": {
+      "true": 1631,
+      "false": 996
+    }
+  }
+}

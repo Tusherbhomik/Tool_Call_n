@@ -4,3 +4,5 @@ hf_upload.py
 *.env
 __pycache__/
 *.pyc
+Paper/
+wizardLM/WizardLM/

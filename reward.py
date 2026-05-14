@@ -113,41 +113,54 @@ def _norm_value(v) -> str:
 # FORMAT REWARD  (Section 3.3, Format Reward)
 # ══════════════════════════════════════════════════════════════════════════════
 
+def _tool_call_json_valid(completion: str) -> bool:
+    """
+    Return True if at least one <tool_call> block contains a strictly valid JSON
+    object with a "name" key.  No brace-stripping tolerance — the reward must
+    penalise malformed output so the model is forced to learn correct JSON.
+    (Brace-stripping leniency lives only in the evaluation handler.)
+    """
+    match = re.search(r"<tool_call>(.*?)</tool_call>", completion, re.DOTALL | re.IGNORECASE)
+    if not match:
+        return False
+    for line in match.group(1).strip().splitlines():
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+            if isinstance(obj, dict) and "name" in obj:
+                return True
+        except json.JSONDecodeError:
+            continue
+    return False
+
+
 def format_reward(completion: str, gt: list[dict]) -> float:
     """
     R_format ∈ {0, 1}
 
-    From the paper:
-      R_format = 1  if all required fields appear and are in the correct order
-               = 0  otherwise
+    Matched to the actual training data format (OpenAI tool_calls style rendered
+    through Qwen's chat template — no <think> or <response> tags):
 
-    Required fields are determined by the ground truth:
-      - <think>   always required
-      - <tool_call> required when gt is non-empty
-      - <response>  required when gt is empty (clarification / direct answer)
-
-    Order must be: <think> before <tool_call>/<response>.
+      gt non-empty  →  R_format = 1 if <tool_call>...</tool_call> is present
+                                     AND the JSON inside is parseable with a
+                                     "name" key; 0 otherwise.
+      gt empty      →  R_format = 1 if no <tool_call> tag is produced (model
+                                     answers directly); 0 if a spurious tool
+                                     call appears.
     """
-    has_think = bool(re.search(r"<think>.*?</think>", completion, re.DOTALL | re.IGNORECASE))
+    has_tool_call = bool(re.search(r"<tool_call>.*?</tool_call>", completion, re.DOTALL | re.IGNORECASE))
 
     if gt:
-        # A tool call is expected.
-        has_tool_call = bool(re.search(r"<tool_call>.*?</tool_call>", completion, re.DOTALL | re.IGNORECASE))
-        if not has_think or not has_tool_call:
+        # Tool call expected — tag must exist and contain valid JSON.
+        if not has_tool_call:
             return 0.0
-        # Check order: <think> must appear before <tool_call>.
-        think_pos = completion.lower().find("<think>")
-        tool_pos  = completion.lower().find("<tool_call>")
-        if think_pos > tool_pos:
+        if not _tool_call_json_valid(completion):
             return 0.0
     else:
-        # No tool call expected — a <response> is required.
-        has_response = bool(re.search(r"<response>.*?</response>", completion, re.DOTALL | re.IGNORECASE))
-        if not has_think or not has_response:
-            return 0.0
-        think_pos    = completion.lower().find("<think>")
-        response_pos = completion.lower().find("<response>")
-        if think_pos > response_pos:
+        # No tool call expected — penalise spurious tool calls.
+        if has_tool_call:
             return 0.0
 
     return 1.0
@@ -340,8 +353,8 @@ def _run_sanity_tests():
                                 "version": "2.3.2"}}]
 
     # 1. Perfect single call
+    # No <think> tags — model output is plain <tool_call> as trained
     perfect = (
-        "<think>Need to deploy.</think>"
         '<tool_call>{"name": "deploy_service", "arguments": '
         '{"service_name": "payment-service", "environment": "staging", "version": "2.3.2"}}'
         "</tool_call>"
@@ -361,7 +374,6 @@ def _run_sanity_tests():
     # R_format  = 1.0  (format is valid)
     # R_final   = 1.0 + (-1.2) = -0.2
     wrong = (
-        "<think>Hmm.</think>"
         '<tool_call>{"name": "rollback_deployment", "arguments": '
         '{"service_name": "payment-service", "environment": "prod", "target_version": "2.3.1"}}'
         "</tool_call>"
@@ -372,7 +384,6 @@ def _run_sanity_tests():
     # 2b. Completely unrelated tool (no shared params at all)
     # r_name=0, r_param=0, r_value=0 → R_max=0, R_correct=-3, R_format=1 → total=-2
     unrelated = (
-        "<think>Hmm.</think>"
         '<tool_call>{"name": "trigger_ci_pipeline", "arguments": '
         '{"pipeline_name": "main", "branch": "dev"}}'
         "</tool_call>"
@@ -380,27 +391,23 @@ def _run_sanity_tests():
     r = toolrl_reward(unrelated, gt_single)
     assert abs(r - (-2.0)) < 1e-9, f"unrelated_tool: expected -2.0 got {r}"
 
-    # 3. No tool when one expected
-    no_tool = "<think>I'll just say something.</think><response>Okay!</response>"
+    # 3. No tool when one expected — plain text response, no <tool_call>
+    no_tool = "I'm sorry, I can't help with that right now."
     r = toolrl_reward(no_tool, gt_single)
     assert abs(r - (-3.0)) < 1e-9, f"no_tool: expected -3.0 got {r}"
 
-    # 4. Empty gt + correct clarification
-    clarify = "<think>I need more info.</think><response>Could you clarify?</response>"
+    # 4. Empty gt + correct clarification — plain text, no tool call
+    clarify = "Could you provide more details so I can help you?"
     r = toolrl_reward(clarify, [])
     assert abs(r - 4.0) < 1e-9, f"empty_gt_correct: expected 4.0 got {r}"
 
-    # 5. Empty gt + spurious call
-    spurious = (
-        "<think>Let me search.</think>"
-        '<tool_call>{"name": "deploy_service", "arguments": {}}</tool_call>'
-    )
+    # 5. Empty gt + spurious call — model calls a tool when none expected
+    spurious = '<tool_call>{"name": "deploy_service", "arguments": {}}</tool_call>'
     r = toolrl_reward(spurious, [])
     assert abs(r - (-3.0)) < 1e-9, f"empty_gt_spurious: expected -3.0 got {r}"
 
     # 6. Partial match — correct name, wrong version value
     partial = (
-        "<think>Deploy.</think>"
         '<tool_call>{"name": "deploy_service", "arguments": '
         '{"service_name": "payment-service", "environment": "staging", "version": "2.3.1"}}'
         "</tool_call>"
@@ -432,7 +439,6 @@ if __name__ == "__main__":
     sample = json.loads(sample_json)
 
     model_output = (
-        "<think>The user corrected the version to 2.3.2. I'll deploy that.</think>"
         '<tool_call>{"name": "deploy_service", "arguments": '
         '{"service_name": "payment-service", "environment": "staging", "version": "2.3.2"}}'
         "</tool_call>"

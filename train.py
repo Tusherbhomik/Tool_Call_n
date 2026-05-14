@@ -240,6 +240,17 @@ def _save_merged(model, tokenizer, trainer):
             json.dump(cfg, f, indent=2)
         print("  patched torch_dtype → float16")
 
+    # Patch tokenizer_config: extra_special_tokens must be a dict, not a list
+    tok_cfg_path = config.SAVE_PATH / "tokenizer_config.json"
+    if tok_cfg_path.exists():
+        with open(tok_cfg_path) as f:
+            tok_cfg = json.load(f)
+        if not isinstance(tok_cfg.get("extra_special_tokens"), dict):
+            tok_cfg["extra_special_tokens"] = {}
+            with open(tok_cfg_path, "w") as f:
+                json.dump(tok_cfg, f, indent=2)
+            print("  patched extra_special_tokens → {}")
+
     del model, merged, trainer
     gc.collect()
     torch.cuda.empty_cache()
