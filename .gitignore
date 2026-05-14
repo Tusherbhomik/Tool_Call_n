@@ -1,0 +1,6 @@
+data/garbage/
+hf_upload.py
+.env
+*.env
+__pycache__/
+*.pyc
