@@ -185,7 +185,8 @@ You are a dataset curator improving training data for AI assistants.
 Rewrite the given user request using the specified method.
 Write naturally — as a real human would phrase it.
 Do NOT mention tool names, API names, or technical details in your output.
-Output ONLY the rewritten request text. Nothing else."""
+Output ONLY the rewritten request text. Nothing else.
+Do NOT explain what you are doing. Write the request directly, as the user would say it."""
 
 
 _S1_OPS = {
@@ -315,6 +316,30 @@ def step1_evolve(client, model, seed: dict, operation: str) -> str | dict | None
 
     raw = raw.strip()
 
+    # Reject meta-commentary leaks — check first 40 chars for narration prefixes
+    _META_PREFIXES = (
+        "i understand", "i need to", "i should", "i'll", "i will", "i'd", "i've",
+        "let me", "as an ai", "the request", "to deepen", "to concretize", "to add",
+        "certainly", "sure,", "of course", "here is", "here's", "rewritten",
+    )
+    if raw.lower()[:40].strip().startswith(_META_PREFIXES):
+        return None
+
+    # Reject outputs containing dataset/training meta-jargon anywhere in the text
+    _META_JARGON = (
+        "dataset", "training data", "wizardlm", "evol-instruct", "ground truth",
+        "jsonl", "trajectory", "prompt_messages", "ground_truth", "annotation",
+        "rewritten prompt", "given prompt", "in-depth method", "in-breadth",
+        "llm", "language model", "fine-tun",
+    )
+    raw_lower = raw.lower()
+    if any(kw in raw_lower for kw in _META_JARGON):
+        return None
+
+    # Reject suspiciously long outputs — a single user message should be concise
+    if len(raw) > 600:
+        return None
+
     if operation == "COMPLICATE_CONTEXT":
         obj = _extract_json_obj(raw)
         if not obj:
@@ -389,15 +414,34 @@ def build_messages(seed_messages: list[dict], step1_result, operation: str) -> l
 
 _S2_SYSTEM = """\
 You are a precise function-calling assistant.
-Given a conversation and the available tools, decide what tool call(s) to make next.
+Given a conversation and available tools, output the correct tool call(s) for the
+FINAL [USER] message.
 
-Rules:
+OUTPUT RULES:
 • Output ONLY a valid JSON array — no explanation, no markdown, no code fences.
-• Format: [{"name": "tool_name", "arguments": {"param": value, ...}}]
-• Use EXACT tool names from the list — do not invent tools.
-• Include ALL required parameters for each call.
-• If the request needs no tool (clarification or direct answer): output []
-• If two things are asked in parallel, include both calls in the array."""
+• Format: [{"name": "tool_name", "arguments": {"param": value}}]
+• Use EXACT tool names — do not invent tools.
+• Include ALL required parameters.
+• Output [] if no tool is needed (clarification, missing info, out-of-scope).
+
+VALUE GROUNDING — CRITICAL:
+• Every argument value must come from the FINAL [USER] message OR the assistant
+  turn IMMEDIATELY before it. Do NOT use values from earlier unrelated turns.
+• IDs (event IDs, ticket numbers, repo paths, device IDs, branch names):
+  must appear verbatim in the final user message. If the user says "that event"
+  or "those branches" without naming them → output [] (ask for clarification).
+• Emails and phone numbers → must appear verbatim in the final user message.
+  A person's name (e.g. "John") is NOT a valid email address. If no actual
+  email address was given → output [].
+• Free-text fields (body, message, description, subject, content, note) → use
+  ONLY the user's exact words. Do NOT paraphrase or compose text. If the user
+  said "send an email about X" but gave no body text → output [].
+• "tomorrow", "next week" → copy as-is; do NOT convert to a specific timestamp
+  unless the user gave one.
+• Vague references ("those two", "both files", "the experimental branches") →
+  output [] unless the final user message names the entities explicitly.
+• Only call tools the user EXPLICITLY requested. Do NOT add extra "helpful" calls.
+• Include ALL required parameters. If any required value is missing → output []."""
 
 
 def step2_generate_gt(client, model, tools: list[dict],
@@ -433,6 +477,58 @@ def step2_generate_gt(client, model, tools: list[dict],
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Grounding helpers
+# ─────────────────────────────────────────────────────────────────────────────
+
+def _looks_injected(val: str) -> bool:
+    """True if a string looks like a specific identifier that must come from the conversation."""
+    if "@" in val:
+        return True                                          # email address
+    if re.search(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}', val):
+        return True                                          # ISO timestamp
+    if re.match(r'^[A-Za-z]{2,}[-_][A-Za-z0-9]', val):
+        return True                                          # EVT-123, dev_lamp, feature_x
+    if re.search(r'[a-zA-Z][a-zA-Z0-9_-]*/[a-zA-Z0-9_-]', val):
+        return True                                          # team/repo, fix/branch-name
+    return False
+
+
+def _check_grounding(gt_calls: list[dict], messages: list[dict]) -> list[str]:
+    """
+    Reject GT argument values that look like injected identifiers not present in
+    the CURRENT request context: the last user message + the assistant turn
+    immediately preceding it.  This prevents cross-turn contamination where IDs
+    from earlier unrelated exchanges are carried into the new GT call.
+    """
+    # Walk backwards: collect last user msg + the assistant turn right before it
+    current_context = ""
+    found_last_user = False
+    for m in reversed(messages):
+        role = m.get("role", "")
+        content = (m.get("content", "") or "").lower()
+        current_context = content + " " + current_context
+        if not found_last_user and role == "user":
+            found_last_user = True
+        elif found_last_user:
+            # Include tool_call argument strings from this assistant turn
+            for tc in m.get("tool_calls", []):
+                current_context += " " + tc.get("function", {}).get("arguments", "").lower()
+            if role == "assistant":
+                break   # stop — don't look at earlier turns
+
+    issues = []
+    for call in gt_calls:
+        for key, val in call.get("arguments", {}).items():
+            if not isinstance(val, str) or len(val) < 4:
+                continue
+            if _looks_injected(val) and val.lower() not in current_context:
+                issues.append(
+                    f"{call['name']}.{key}='{val}' not in final user msg or preceding context"
+                )
+    return issues
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Validation
 # ─────────────────────────────────────────────────────────────────────────────
 
@@ -465,6 +561,11 @@ def _validate(sample: dict, seed: dict) -> list[str]:
     seed_last    = _last_user_msg(seed["prompt_messages"])
     if evolved_last == seed_last:
         reasons.append("last user message unchanged from seed")
+
+    # Grounding: reject hallucinated identifiers not present in conversation
+    grounding_issues = _check_grounding(sample["ground_truth_calls"], sample["prompt_messages"])
+    if grounding_issues:
+        reasons.extend(grounding_issues)
 
     if _REWARD_AVAILABLE and not reasons:
         norm_gt = [{"name": c["name"], "arguments": c.get("arguments", {})} for c in gt]
@@ -551,6 +652,22 @@ def _load_fps(path: Path) -> set[str]:
     return {_fingerprint(s) for s in _load_jsonl(path)}
 
 
+def _load_used_pairs(batch_dir: Path) -> set[tuple]:
+    """Load (trajectory_id, operation) pairs already attempted in prior batches."""
+    path = batch_dir / "used_pairs.json"
+    if not path.exists():
+        return set()
+    try:
+        return {tuple(p) for p in json.loads(path.read_text())}
+    except Exception:
+        return set()
+
+
+def _save_used_pairs(batch_dir: Path, pairs: set[tuple]):
+    path = batch_dir / "used_pairs.json"
+    path.write_text(json.dumps(sorted(list(pairs))))
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Inline audit
 # ─────────────────────────────────────────────────────────────────────────────
@@ -585,8 +702,20 @@ def _print_op_stats(op_stats: dict):
 # Main generation loop
 # ─────────────────────────────────────────────────────────────────────────────
 
+def _next_batch_num(batch_dir: Path) -> int:
+    """Return the next batch number based on existing batch_NNNN.jsonl files."""
+    existing = sorted(batch_dir.glob("batch_*.jsonl"))
+    if not existing:
+        return 1
+    last = existing[-1].stem  # e.g. "batch_0001"
+    try:
+        return int(last.split("_")[-1]) + 1
+    except ValueError:
+        return len(existing) + 1
+
+
 def generate(input_path, output_path, target, batch_size, model,
-             max_workers, operations, auto, api_key, base_url, seed_limit):
+             max_workers, operations, auto, api_key, base_url, seed_limit, batch_dir):
 
     import os
     client = OpenAI(api_key=api_key or os.environ.get("OPENROUTER_API_KEY"),
@@ -597,15 +726,25 @@ def generate(input_path, output_path, target, batch_size, model,
         seeds = seeds[:seed_limit]
     print(f"Seeds : {len(seeds)}  |  Operations : {operations}")
 
-    out_path = Path(output_path)
+    out_path  = Path(output_path)
     out_path.parent.mkdir(parents=True, exist_ok=True)
+
+    bdir = Path(batch_dir)
+    bdir.mkdir(parents=True, exist_ok=True)
 
     existing_fps = _load_fps(out_path)
     for s in seeds:
         existing_fps.add(_fingerprint(s))   # never duplicate a seed
+    # Also load fps from any existing batch files not yet in the master file
+    for bf in sorted(bdir.glob("batch_*.jsonl")):
+        for s in _load_jsonl(bf):
+            existing_fps.add(_fingerprint(s))
+
+    used_pairs = _load_used_pairs(bdir)
+    print(f"Used (seed, op) pairs from prior batches: {len(used_pairs)}")
 
     out_lock  = Lock()
-    batch_num = 0
+    batch_num = _next_batch_num(bdir) - 1  # incremented at top of loop
 
     while True:
         current = _count(out_path)
@@ -615,18 +754,25 @@ def generate(input_path, output_path, target, batch_size, model,
 
         this_batch = min(batch_size, remaining)
         batch_num += 1
+        batch_out  = bdir / f"batch_{batch_num:04d}.jsonl"
 
         print(f"\n{'='*58}")
         print(f"Batch {batch_num}  |  generating {this_batch}  |  model: {model}")
         print(f"Output so far: {current}/{target}")
+        print(f"Batch file: {batch_out}")
         print(f"{'='*58}")
 
         batch_tmp = out_path.parent / f"_batch_{batch_num:04d}_tmp.jsonl"
         op_stats: dict[str, dict] = {op: {"ok": 0, "fail": 0} for op in operations}
         n_written = 0
 
-        tasks = [(client, model, s, op) for s in seeds for op in operations]
+        # Only attempt (seed, op) pairs not yet tried in any prior batch
+        tasks = [
+            (client, model, s, op) for s in seeds for op in operations
+            if (s.get("trajectory_id", ""), op) not in used_pairs
+        ]
         random.shuffle(tasks)
+        print(f"Eligible (seed, op) pairs this batch: {len(tasks)}")
 
         class DualWriter:
             def __init__(self, master, tmp):
@@ -646,6 +792,8 @@ def generate(input_path, output_path, target, batch_size, model,
                         break
 
                     evolved, op, reason = fut.result()
+                    seed_tid = futures[fut][2].get("trajectory_id", "")
+                    used_pairs.add((seed_tid, op))
                     if evolved is None:
                         op_stats[op]["fail"] += 1
                         continue
@@ -669,9 +817,14 @@ def generate(input_path, output_path, target, batch_size, model,
         print(f"\nBatch {batch_num} done — wrote {n_written} new samples.")
         _print_op_stats(op_stats)
 
+        _save_used_pairs(bdir, used_pairs)
+
         if n_written > 0:
             _inline_audit(batch_tmp)
-        batch_tmp.unlink(missing_ok=True)
+            batch_tmp.rename(batch_out)
+            print(f"Batch saved → {batch_out}  ({n_written} samples)")
+        else:
+            batch_tmp.unlink(missing_ok=True)
 
         total_now = _count(out_path)
         print(f"\nOutput file: {out_path}  ({total_now}/{target} samples)")
@@ -690,8 +843,8 @@ def main():
         description="Two-step WizardLM Evol-Instruct for tool-learning datasets.")
     ap.add_argument("--input",    default="data/dataset_clean_4field.jsonl")
     ap.add_argument("--output",   default="data/dataset_expanded.jsonl")
-    ap.add_argument("--target",   type=int, default=20,
-                    help="Total samples desired in output file (default: 20)")
+    ap.add_argument("--target",   type=int, default=None,
+                    help="Total samples desired in output file (default: current + --batch)")
     ap.add_argument("--batch",    type=int, default=20,
                     help="Samples per run before stopping for review (default: 20)")
     ap.add_argument("--auto",     action="store_true",
@@ -703,11 +856,14 @@ def main():
                     help="Max concurrent API calls (default: 10; each sample = 2 calls)")
     ap.add_argument("--ops",      default=None,
                     help=f"Comma-separated ops (default: all). Choices: {ALL_OPS}")
+    ap.add_argument("--batch-dir", default="data/batches",
+                    help="Directory where per-batch JSONL files are saved (default: data/batches)")
     ap.add_argument("--seed-limit", type=int, default=None,
                     help="Use only first N seeds (useful for testing)")
     ap.add_argument("--overwrite", action="store_true",
                     help="Clear output file before starting")
-    ap.add_argument("--rand-seed", type=int, default=42)
+    ap.add_argument("--rand-seed", type=int, default=None,
+                    help="Random seed for shuffle (default: None = time-based, different each run)")
     args = ap.parse_args()
 
     random.seed(args.rand_seed)
@@ -727,13 +883,14 @@ def main():
         print("Output file cleared.")
 
     import os
+    target = args.target if args.target is not None else _count(Path(args.output)) + args.batch
     if not (args.api_key or os.environ.get("OPENROUTER_API_KEY")):
         print("ERROR: provide --api-key or set OPENROUTER_API_KEY env var."); sys.exit(1)
 
     generate(
         input_path=args.input,
         output_path=args.output,
-        target=args.target,
+        target=target,
         batch_size=args.batch,
         model=args.model,
         max_workers=args.workers,
@@ -742,6 +899,7 @@ def main():
         api_key=args.api_key,
         base_url=args.base_url,
         seed_limit=args.seed_limit,
+        batch_dir=args.batch_dir,
     )
 
 

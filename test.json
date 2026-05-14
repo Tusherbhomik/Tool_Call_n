@@ -1,0 +1,153 @@
+{
+  "trajectory_id": "three_turn_0034_evol_DEEPEN",
+  "prompt_messages": [
+    {
+      "role": "system",
+      "content": "You are a build and release assistant helping engineers manage environment promotions and config synchronization across stages."
+    },
+    {
+      "role": "user",
+      "content": "What version is currently deployed to staging for the analytics-service?"
+    },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "c1",
+          "type": "function",
+          "function": {
+            "name": "get_deployed_version",
+            "arguments": "{\"service\": \"analytics-service\", \"environment\": \"staging\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "c1",
+      "content": "{\"service\":\"analytics-service\",\"environment\":\"staging\",\"version\":\"3.1.7\",\"deployed_at\":\"2024-04-11T20:00:00Z\",\"deployed_by\":\"ci-bot\",\"health\":\"healthy\"}"
+    },
+    {
+      "role": "assistant",
+      "content": "analytics-service version 3.1.7 is deployed to staging, deployed by ci-bot at 20:00 UTC yesterday. Health is good."
+    },
+    { "role": "user", "content": "What's in production right now?" },
+    {
+      "role": "assistant",
+      "content": "",
+      "tool_calls": [
+        {
+          "id": "c2",
+          "type": "function",
+          "function": {
+            "name": "get_deployed_version",
+            "arguments": "{\"service\": \"analytics-service\", \"environment\": \"production\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "c2",
+      "content": "{\"service\":\"analytics-service\",\"environment\":\"production\",\"version\":\"3.1.5\",\"deployed_at\":\"2024-04-08T14:00:00Z\",\"deployed_by\":\"ci-bot\",\"health\":\"healthy\"}"
+    },
+    {
+      "role": "assistant",
+      "content": "Production is running analytics-service version 3.1.5, deployed on April 8. Staging is ahead at 3.1.7."
+    },
+    {
+      "role": "user",
+      "content": "Can you help me deploy our web app's staging version 3.1.7 to the production environment this Thursday at 10 am?"
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "get_deployed_version",
+        "description": "Get the currently deployed version of a service in an environment.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "service": { "type": "string" },
+            "environment": { "type": "string" }
+          },
+          "required": ["service", "environment"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "deploy_service",
+        "description": "Deploy a specific version of a service to an environment.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "service": { "type": "string" },
+            "version": { "type": "string" },
+            "environment": { "type": "string" }
+          },
+          "required": ["service", "version", "environment"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "get_deploy_history",
+        "description": "Retrieve deployment history for a service in an environment.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "service": { "type": "string" },
+            "environment": { "type": "string" }
+          },
+          "required": ["service", "environment"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "compare_versions",
+        "description": "Compare two versions of a service and list changes.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "service": { "type": "string" },
+            "version_a": { "type": "string" },
+            "version_b": { "type": "string" }
+          },
+          "required": ["service", "version_a", "version_b"]
+        }
+      }
+    },
+    {
+      "type": "function",
+      "function": {
+        "name": "trigger_pipeline",
+        "description": "Trigger a named CI/CD pipeline for a service.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "service": { "type": "string" },
+            "pipeline": { "type": "string" }
+          },
+          "required": ["service", "pipeline"]
+        }
+      }
+    }
+  ],
+  "ground_truth_calls": [
+    {
+      "name": "deploy_service",
+      "arguments": {
+        "service": "analytics-service",
+        "version": "3.1.7",
+        "environment": "production"
+      }
+    }
+  ]
+}
